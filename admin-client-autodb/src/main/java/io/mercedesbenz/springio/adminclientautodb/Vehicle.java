@@ -1,17 +1,17 @@
 package io.mercedesbenz.springio.adminclientautodb;
 
-import org.springframework.data.jpa.domain.AbstractAuditable;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
-import java.math.BigDecimal;
 
 @Entity
 public class Vehicle extends MyAuditable<String> implements Serializable{
+
+    private static final long serialVersionUID = 8226459989560781366L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -22,7 +22,7 @@ public class Vehicle extends MyAuditable<String> implements Serializable{
     private BigDecimal price;
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -30,7 +30,7 @@ public class Vehicle extends MyAuditable<String> implements Serializable{
     }
 
     public String getModel() {
-        return model;
+        return this.model;
     }
 
     public void setModel(String model) {
@@ -38,7 +38,7 @@ public class Vehicle extends MyAuditable<String> implements Serializable{
     }
 
     public BigDecimal getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(BigDecimal price) {
