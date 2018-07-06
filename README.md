@@ -138,7 +138,10 @@ In the `Http Traces` tab you can check detailed information about each HTTP requ
  4. Check that a new request is displayed in the `HttpTrances` tab (you can access the request details by clicking on it).
 
 ### App instance Scheduled Tasks
-TODO
+Using `Spring Boot Actuator` you can check the scheduled task with the `@Scheduled` annotation:
+
+ 1. Go to the Actuator Scheduled Tasks endpoint of the `AutoDB` app (http://localhost:8090/actuator/scheduledtasks);
+ 2. Check that there are two scheduled `fixedRate` tasks.
 
 ### Actuator endpoints base path
 Actuator endpoints base path can be changed via configuration in `application.properties`:
