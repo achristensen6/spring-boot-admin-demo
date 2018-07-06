@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Vehicle extends MyAuditable<String> implements Serializable{
+public class Vehicle implements Serializable{
 
     private static final long serialVersionUID = 8226459989560781366L;
 
