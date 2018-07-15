@@ -1,4 +1,3 @@
-
 # Spring Boot Admin Demo
 In order to show the functionalities available in Spring Boot Admin you will need to follow the instructions below. As an overview, you will:
 
@@ -142,6 +141,16 @@ Using `Spring Boot Actuator` you can check the scheduled task with the `@Schedul
 
  1. Go to the Actuator Scheduled Tasks endpoint of the `AutoDB` app (http://localhost:8090/actuator/scheduledtasks);
  2. Check that there are two scheduled `fixedRate` tasks.
+
+### App instance Slack Notifications
+It is possible to configure the `Admin Server` so that it sends Slack notifications whenever a registered App changes its status. Perform the following steps;
+
+ 1. In your Slack workspace, configure `Incoming WebHooks` app;
+ 2. In the `Admin Server` edit the `spring.boot.admin.notify.slack.webhook-url` property with the URL from the configured `Incoming WebHooks`;
+ 3. Stop `AutoDB` or `Table Tenis` app;
+ 4. Check that a notification has been sent to the configured Slack channel (in `Incoming WebHooks` );
+ 5. Start the stopped app;
+ 6. Check that a notification has been sent to the configured Slack channel.
 
 ### Actuator endpoints base path
 Actuator endpoints base path can be changed via configuration in `application.properties`:
